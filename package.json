@@ -1,10 +1,10 @@
 {
-  "name": "red-contrib-remote-cli",
+  "name": "node-red-contrib-remote-cli",
   "version": "1.0.0",
   "description": "CLI for Remote-RED, the Remote Access ecosystem for Node-RED.",
   "main": "bin/index.js",
   "bin": {
-    "red-contrib-remote-cli": "bin/index.js"
+    "node-red-contrib-remote-cli": "bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
