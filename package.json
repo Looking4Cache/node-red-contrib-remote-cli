@@ -1,0 +1,19 @@
+{
+  "name": "red-contrib-remote-cli",
+  "version": "1.0.0",
+  "description": "CLI für Remote-RED Node-RED nodes.",
+  "main": "bin/index.js",
+  "bin": {
+    "red-contrib-remote-cli": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thorsten Heilmann",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^1.6.5",
+    "chalk": "^4.1.2",
+    "yargs": "^17.7.2"
+  }
+}
