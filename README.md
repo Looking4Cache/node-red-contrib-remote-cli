@@ -18,16 +18,16 @@ your local Node-RED and access to the HTTP Admin API of Node-RED.
 ## Usage
 
 Install the CLI:
-    npm i -g red-contrib-remote-cli
+    npm i -g node-red-contrib-remote-cli
 
 Get the help:
-    red-contrib-remote-cli --help
+    node-red-contrib-remote-cli --help
 
 Get the help about configuring Remote RED:
-    red-contrib-remote-cli configure --help
+    node-red-contrib-remote-cli configure --help
 
 Example:
-    red-contrib-remote-cli configure --flowname RemoteAccess --name RemoteAccess --region de
+    node-red-contrib-remote-cli configure --flowname RemoteAccess --name RemoteAccess --region de
 
 
 ## Contact
