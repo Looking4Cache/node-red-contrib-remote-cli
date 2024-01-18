@@ -1,7 +1,7 @@
 {
   "name": "red-contrib-remote-cli",
   "version": "1.0.0",
-  "description": "CLI für Remote-RED Node-RED nodes.",
+  "description": "CLI for Remote-RED, the Remote Access ecosystem for Node-RED.",
   "main": "bin/index.js",
   "bin": {
     "red-contrib-remote-cli": "bin/index.js"
