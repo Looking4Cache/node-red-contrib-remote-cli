@@ -138,7 +138,8 @@ yargs
       isServer = false;
       serverOrRegion = argv.region;
     }
-    axios.get(`${argv.url}/contrib-remote/requestInstanceHash/${serverOrRegion}`)
+    let customerhash = (argv.customerhash !== '') ? argv.customerhash : '0';
+    axios.get(`${argv.url}/contrib-remote/requestInstanceHash/${serverOrRegion}/${customerhash}`)
     .then(response => {
       if (response.data.error === undefined) {
         // Register app
@@ -168,8 +169,7 @@ yargs
               'instancehash': response.data.instancehash,
               'instanceauth': response.data.instanceauth,
               'server': response.data.server,
-              'region': argv.region,
-              'customerhash': argv.customerhash
+              'region': argv.region
             }
             const template = `{"id":"${data.flowid}","label":"${data.flowname}","disabled":false,"info":"","nodes":[{"id":"${data.accessnodeid}","type":"remote-access","confignode":"${data.confignodeid}","name":"${data.nodename}","verbose":0,"x":120,"y":60,"z":""}],"configs":[{"id":"${data.confignodeid}","type":"remote-config","name":"${data.nodename}","host":"${data.host}","protocol":"${data.protocol}","port":"${data.port}","baseurl":"${data.baseurl}","instancehash":"${data.instancehash}","server":"${data.server}","region":"${data.region}","credentials":{"instanceauth":"${data.instanceauth}"}}]}`;
 
