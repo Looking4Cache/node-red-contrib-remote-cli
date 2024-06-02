@@ -61,10 +61,10 @@ yargs
     .then(response => {
       if (response.data.error === undefined) {
         // Show QR Code and Deeplink
-        writeResult(responseFlow)
+        writeResult(response)
 
         // Store png
-        writeQRCodeAsPNG(responseFlow)
+        writeQRCodeAsPNG(response)
       } else {
         console.log("ERROR: " + response.data.error);
       }
