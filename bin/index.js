@@ -79,7 +79,12 @@ yargs
   describe: 'Registers an instance of Remote-RED to a server. Generates a QR Code and a deeplink. Adds a Remote Access Node to Node-RED.',
   builder: yargs => {
     yargs.positional('customerhash', {
-      describe: 'If you are a customer of the bussiness tier, please apply your customerhash.',
+      describe: 'If you are a customer of the bussiness tier, please apply your customerhash. Key is neccessary too.',
+      default: '',
+      type: 'string'
+    })
+    yargs.positional('customerkey', {
+      describe: 'If you are a customer of the bussiness tier, please apply your customerkey.',
       default: '',
       type: 'string'
     })
@@ -139,7 +144,8 @@ yargs
       serverOrRegion = argv.region;
     }
     let customerhash = (argv.customerhash !== '') ? argv.customerhash : '0';
-    axios.get(`${argv.url}/contrib-remote/requestInstanceHash/${serverOrRegion}/${customerhash}`)
+    let customerkey = (argv.customerkey !== '') ? argv.customerkey : '0';
+    axios.get(`${argv.url}/contrib-remote/requestInstanceHash/${serverOrRegion}/${customerhash}/${customerkey}`)
     .then(response => {
       if (response.data.error === undefined) {
         // Register app
