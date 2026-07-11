@@ -88,6 +88,11 @@ yargs
       default: '',
       type: 'string'
     })
+    yargs.option('customerreference', {
+      describe: 'Optional customer reference (e.g. serial number or end customer number, max. 100 characters). Used to identify this instance in the Partner Portal. Cannot be changed afterwards.',
+      default: '',
+      type: 'string'
+    })
     yargs.positional('server', {
       describe: 'The server to be used directly. A server can also be selected automatically by specifying "region".',
       default: '',
@@ -145,7 +150,11 @@ yargs
     }
     let customerhash = (argv.customerhash !== '') ? argv.customerhash : '0';
     let customerkey = (argv.customerkey !== '') ? argv.customerkey : '0';
-    axios.get(`${argv.url}/contrib-remote/requestInstanceHash/${serverOrRegion}/${customerhash}/${customerkey}`)
+    let requestInstanceHashUrl = `${argv.url}/contrib-remote/requestInstanceHash/${serverOrRegion}/${customerhash}/${customerkey}`;
+    if (argv.customerreference !== '') {
+      requestInstanceHashUrl += `?customerreference=${encodeURIComponent(argv.customerreference)}`;
+    }
+    axios.get(requestInstanceHashUrl)
     .then(response => {
       if (response.data.error === undefined) {
         // Register app
