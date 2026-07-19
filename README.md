@@ -29,10 +29,8 @@ Get the help about configuring Remote RED:
 Example:
     node-red-contrib-remote-cli configure --flowname RemoteAccess --name RemoteAccess --region de
 
-Example with Partner Program (optional customer reference to identify the instance in the
-Partner Portal later, e.g. a serial number or end customer number, max. 100 characters,
-cannot be changed afterwards):
-    node-red-contrib-remote-cli configure --flowname RemoteAccess --name RemoteAccess --region de --customerhash <hash> --customerkey <key> --customerreference SN-12345
+Example with Partner Program (with direct server allocation and a optional customer reference, e.g. a serial number or end customer number):
+    node-red-contrib-remote-cli configure --flowname RemoteAccess --name RemoteAccess --server nodered05.remote-red.com --customerhash <hash> --customerkey <key> --customerreference SN-12345
 
 
 ## Contact
